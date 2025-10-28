@@ -34,7 +34,7 @@ class Span
 
 		void			addNumber(int n);
 		template <typename T>
-		void			addMultipleNumber(T nbs);
+		void			addMultipleNumbers(T nbs);
 		unsigned int	shortestSpan();
 		unsigned int	longestSpan();
 };
