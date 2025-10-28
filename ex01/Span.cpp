@@ -52,7 +52,7 @@ void			Span::addNumber(int n)
 	this->_ms_int.insert(n);
 }
 template <typename T>
-void			Span::addMultipleNumber(T nbs)
+void			Span::addMultipleNumbers(T nbs)
 {
 	if (nbs.size() == 0)
 		return ;
