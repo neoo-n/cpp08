@@ -5,8 +5,9 @@
 #include <queue>
 #include <stack>
 
-void	sequence_containers()
+int main()
 {
+	std::cout << "** VECTOR **" << std::endl;
 	std::vector<int>	v;
 	v.reserve(6);
 
@@ -35,6 +36,7 @@ void	sequence_containers()
 		std::cerr << RED << e.what() << std::endl << WHITE;
 	}
 
+	std::cout << std::endl << "** DEQUE **" << std::endl;
 	std::deque<int>	d;
 
 	d.push_back(1);
@@ -62,6 +64,7 @@ void	sequence_containers()
 		std::cerr << RED << e.what() << std::endl << WHITE;
 	}
 
+	std::cout << std::endl << "** LIST **" << std::endl;
 	std::list<int>	l;
 
 	l.push_back(1);
@@ -88,40 +91,5 @@ void	sequence_containers()
 	{
 		std::cerr << RED << e.what() << std::endl << WHITE;
 	}
-}
-
-void	adaptor_containers()
-{
-	std::stack<int>	s;
-	s.push(1);
-	s.push(4);
-	s.push(23);
-	s.push(-5);
-	s.push(0);
-	s.push(-42);
-
-	try
-	{
-		::easyfind(s, 4);
-	}
-	catch(const std::exception& e)
-	{
-		std::cerr << RED << e.what() << std::endl << WHITE;
-	}
-	
-	try
-	{
-		::easyfind(s, -6);
-	}
-	catch(const std::exception& e)
-	{
-		std::cerr << RED << e.what() << std::endl << WHITE;
-	}
-}
-
-int main()
-{
-	sequence_containers();
-	adaptor_containers();
 	return (0);
 }

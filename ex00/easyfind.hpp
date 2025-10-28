@@ -1,5 +1,5 @@
 #ifndef	EASYFIND_HPP
-# define EASYFIN_HPP
+# define EASYFIND_HPP
 
 # include <iostream>
 # include <exception>
@@ -11,15 +11,16 @@
 # define YELLOW "\033[0;33m"
 
 template <typename T>
-void	easyfind(T cont, int n)
+void	easyfind(const T cont, int n)
 {
 	bool	found_it = false;
-	size_t	cont_size = cont.size();
-	for (size_t i = 0; i < cont_size; i++)
+	for (typename T::const_iterator it = cont.begin(); it != cont.end(); it++)
 	{
-		if (cont.back() == n)
+		if (*it == n)
+		{
 			found_it = true;
-		cont.pop_back();
+			break ;
+		}
 	}
 	if (!found_it)
 		throw std::invalid_argument("This integer doesn't exist.");
