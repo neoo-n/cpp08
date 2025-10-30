@@ -1,4 +1,5 @@
 #include "Span.hpp"
+#include <vector>
 
 int main()
 {
@@ -34,7 +35,7 @@ int main()
 	catch(const std::exception& e)
 	{
 		std::cerr << e.what() << std::endl;
-	}
+}
 
 	std::cout << std::endl << "** One int in span : longest **" << std::endl;
 	try
@@ -59,6 +60,27 @@ int main()
 		s.addNumber(45);
 		s.addNumber(1024);
 		s.addNumber(-184);
+		std::cout << "Shortest Span : " << s.shortestSpan() << std::endl;
+		std::cout << "Longest Span : " << s.longestSpan() << std::endl;
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << std::endl;
+	}
+
+	std::cout << std::endl << "** Span complete : multiple numbers **" << std::endl;
+	try
+	{
+		std::vector<int> v;
+		v.reserve(6);
+		v.push_back(-6);
+		v.push_back(40);
+		v.push_back(-34);
+		v.push_back(1025);
+		v.push_back(68);
+		v.push_back(-48);
+		Span	s(10);
+		s.addMultipleNumbers(v);
 		std::cout << "Shortest Span : " << s.shortestSpan() << std::endl;
 		std::cout << "Longest Span : " << s.longestSpan() << std::endl;
 	}

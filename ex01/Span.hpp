@@ -34,7 +34,15 @@ class Span
 
 		void			addNumber(int n);
 		template <typename T>
-		void			addMultipleNumbers(T nbs);
+		void			addMultipleNumbers(T nbs)
+		{
+			if (nbs.size() == 0)
+				return ;
+			for (typename T::iterator it = nbs.begin(); it != nbs.end(); it++)
+			{
+				this->addNumber(*it);
+			}
+		}
 		unsigned int	shortestSpan();
 		unsigned int	longestSpan();
 };
