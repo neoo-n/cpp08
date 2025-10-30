@@ -1,5 +1,7 @@
 #include "Span.hpp"
 #include <vector>
+#include <cstdlib>
+#include <ctime>
 
 int main()
 {
@@ -72,14 +74,12 @@ int main()
 	try
 	{
 		std::vector<int> v;
-		v.reserve(6);
-		v.push_back(-6);
-		v.push_back(40);
-		v.push_back(-34);
-		v.push_back(1025);
-		v.push_back(68);
-		v.push_back(-48);
-		Span	s(10);
+
+		v.reserve(20000);
+		std::srand(std::time(0));
+		for (int i = 0; i < 20000; i++)
+			v.push_back(std::rand());
+		Span	s(20000);
 		s.addMultipleNumbers(v);
 		std::cout << "Shortest Span : " << s.shortestSpan() << std::endl;
 		std::cout << "Longest Span : " << s.longestSpan() << std::endl;
