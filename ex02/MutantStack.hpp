@@ -15,11 +15,12 @@ class MutantStack : public std::stack<T>
 		~MutantStack();
 
 		typedef typename MutantStack<T>::container_type::iterator iterator;
+		typedef typename MutantStack<T>::container_type::reverse_iterator reverse_iterator;
 
 		iterator	begin();
 		iterator	end();
-		iterator	rbegin();
-		iterator	rend();
+		reverse_iterator	rbegin();
+		reverse_iterator	rend();
 };
 
 # include "MutantStack.tpp"

@@ -27,5 +27,16 @@ int main()
 		++it;
 	}
 	std::stack<int> s(mstack);
+
+	MutantStack<int>::reverse_iterator itr = mstack.rbegin();
+	MutantStack<int>::reverse_iterator iter = mstack.rend();
+	++itr;
+	--itr;
+	std::cout << std::endl << "elts of ms in reverse : " << std::endl;
+	while (itr != iter)
+	{
+		std::cout << *itr << std::endl;
+		++itr;
+	}
 	return 0;
 }
