@@ -20,7 +20,7 @@ int main()
 	MutantStack<int>::iterator ite = mstack.end();
 	++it;
 	--it;
-	std::cout << "elts of ms : " << std::endl;
+	std::cout << std::endl << "elts of ms : " << std::endl;
 	while (it != ite)
 	{
 		std::cout << *it << std::endl;
