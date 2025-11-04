@@ -14,26 +14,13 @@ class MutantStack : public std::stack<T>
 		MutantStack operator=(const MutantStack &obj);
 		~MutantStack();
 
-		class iterator : public std::iterator<std::input_iterator_tag, T, T, T*, T&>
-		{
-			// private:
-				// T	*ptr;
-			public:
-				iterator operator++();
-				iterator operator++(int);
-				iterator operator--();
-				iterator operator--(int);
-				iterator operator*();
-		};
+		typedef typename MutantStack<T>::container_type::iterator iterator;
+
 		iterator	begin();
 		iterator	end();
 		iterator	rbegin();
 		iterator	rend();
 };
-
-template <typename T>
-std::ostream	operator<<(std::ostream &os, typename MutantStack<T>::iterator it);
-
 
 # include "MutantStack.tpp"
 

@@ -23,63 +23,27 @@ template <typename T>
 MutantStack<T>::~MutantStack()
 {}
 
-// --------------------------- ITERATOR ----------------------------------------
-template <typename T>
-// typename MutantStack<T>::iterator	MutantStack<T>::iterator::operator++()
-// {
-// 	MutantStack<T>::iterator temp = *this;
-// 	temp.pop();
-
-
-// }
-typename MutantStack<T>::iterator	MutantStack<T>::iterator::operator*()
-{
-	return (*this);
-}
-
 // --------------------------- METHODS ------------------------------------------
 template <typename T>
 typename MutantStack<T>::iterator	MutantStack<T>::begin()
 {
-	return (this->top());
+	return (this->c.begin());
 }
 
 template <typename T>
 typename MutantStack<T>::iterator	MutantStack<T>::end()
 {
-	MutantStack<T>	temp = *this;
-	size_t			ms_size = this->size();
-	while (ms_size - 1 > 0)
-	{
-		temp.pop();
-		ms_size--;
-	}
-	return (temp.top());
-}
-
-template <typename T>
-typename MutantStack<T>::iterator	MutantStack<T>::rend()
-{
-	return (this->top());
+	return (this->c.end());
 }
 
 template <typename T>
 typename MutantStack<T>::iterator	MutantStack<T>::rbegin()
 {
-	MutantStack<T>	temp = *this;
-	size_t			ms_size = this->size();
-	while (ms_size - 1 > 0)
-	{
-		temp.pop();
-		ms_size--;
-	}
-	return (temp.top());
+	return (this->c.rbegin());
 }
 
-// --------------------------- OUTSIDE -------------------------------
 template <typename T>
-std::ostream	operator<<(std::ostream &os, typename MutantStack<T>::iterator it)
+typename MutantStack<T>::iterator	MutantStack<T>::rend()
 {
-	os << it;
-	return (os);
+	return (this->c.rend());
 }
