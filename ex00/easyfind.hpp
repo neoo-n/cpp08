@@ -3,6 +3,7 @@
 
 # include <iostream>
 # include <exception>
+# include <algorithm>
 
 # define BLUE "\033[34m"
 # define WHITE "\033[0m"
@@ -13,16 +14,8 @@
 template <typename T>
 void	easyfind(const T cont, int n)
 {
-	bool	found_it = false;
-	for (typename T::const_iterator it = cont.begin(); it != cont.end(); it++)
-	{
-		if (*it == n)
-		{
-			found_it = true;
-			break ;
-		}
-	}
-	if (!found_it)
+	typename T::const_iterator it = std::find(cont.begin(), cont.end(), n);
+	if (it == cont.end())
 		throw std::invalid_argument("This integer doesn't exist.");
 	std::cout << "The integer exist in this container" << std::endl;
 }
